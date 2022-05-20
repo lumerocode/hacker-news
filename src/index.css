@@ -27,7 +27,8 @@ body {
 
 /* ===================== GENERAL STYLES ===================== */
 .container__header,
-.container__section {
+.container__navbar,
+.container__filter {
   margin-left: 150px;
   margin-right: 150px;
 }
