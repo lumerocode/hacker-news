@@ -55,8 +55,9 @@
 	max-height: 400px;
 	overflow: auto;
 	z-index: 100;
-	width: 100%;
-	
+	width: 240px;
+	height: 139px;
+	position: relative;
 }
 
 .opciones.active {
@@ -81,7 +82,8 @@
 }
 
 .opciones .contenido-opcion {
-	padding: 23px;
+	height: 46px;
+	padding: 10px;
 }
 
 .contenido-opcion img {

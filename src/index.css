@@ -28,7 +28,8 @@ body {
 /* ===================== GENERAL STYLES ===================== */
 .container__header,
 .container__navbar,
-.container__filter {
+.container__filter,
+.container__card {
   margin-left: 150px;
   margin-right: 150px;
 }
