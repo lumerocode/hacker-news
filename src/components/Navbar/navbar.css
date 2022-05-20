@@ -1,0 +1,30 @@
+.container__navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.navbar__nav {
+    display: flex;
+}
+
+.nav__link {
+    display: block;
+    width: 98px;
+    height: 31px;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    color: #606060; 
+}
+
+.active {
+    border: solid 1px var(--azure);
+    color: var(--azure);
+}

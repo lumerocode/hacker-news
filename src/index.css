@@ -10,7 +10,7 @@
 
 :root {
   --color-bg: #fcfcfc;
-  --color-azure: #1797ff;
+  --azure: #1797ff;
 
 
   --transition : all 400 ease;
@@ -26,7 +26,8 @@ body {
 }
 
 /* ===================== GENERAL STYLES ===================== */
-.container__header {
+.container__header,
+.container__section {
   margin-left: 150px;
   margin-right: 150px;
 }
