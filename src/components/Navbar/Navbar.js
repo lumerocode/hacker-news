@@ -1,5 +1,7 @@
 import React from 'react'
 import './navbar.css'
+import { NavLink } from "react-router-dom"; //Importamos navlink y link para la navegacion interna entre páginas
+
 
 const Navbar = () => {
   return (
@@ -7,8 +9,12 @@ const Navbar = () => {
         <div className="navbar__names">
             <div className="" id="">
             <div className="navbar__nav">
-                <a className="nav__link active" href="#">All</a>
-                <a className="nav__link" href="#">My faves</a>
+                <NavLink to='/' className="nav__link" href="#">
+                  All
+                </NavLink>
+                <NavLink to='/faves' activeclass="active" className="nav__link" href="#">
+                  My faves 
+                </NavLink>
             </div>
             </div>
         </div>

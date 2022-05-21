@@ -5,7 +5,28 @@ import Navbar from './components/Navbar/Navbar';
 import Filter from './components/Filter/Filter';
 import Card from './components/Card/Card';
 
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' //Enrutamiento
+import Faves from './Page/Faves';
+
+
 function App() {
+
+  return(
+    <Router>
+      <div className='App'>
+        <Header />
+        <Navbar />
+      </div>
+      
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/faves' element={<Faves />}></Route>
+      </Routes>
+    </Router>
+  )
+ }
+
+  const Home = () => {
 
   //Estado que recibe y actualiza los datos traidos de la API
   const [newData, setNewData] = useState([]);
@@ -24,18 +45,17 @@ function App() {
      })();
   },[API]);
 
-
   return (
     <>
-      <Header />
-      <Navbar />
-      <Filter />
-
-      <section className='container__card'>
-        <Card 
+      <div className="App">
         
-          hits={hits}/>
-      </section>
+        
+        <Filter />
+        <section className='container__card'>
+          <Card 
+            hits={hits}/>
+        </section>
+      </div>
     </>
   );
 }
