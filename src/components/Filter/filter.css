@@ -58,6 +58,7 @@
 	width: 240px;
 	height: 139px;
 	position: relative;
+	display: none;
 }
 
 .opciones.active {
