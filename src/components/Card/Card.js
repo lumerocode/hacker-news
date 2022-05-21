@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './card.css'
 import Time from '../../assets/img/time-icon.png'
 import HeartComplete from '../../assets/img/heart-com.png'
@@ -6,13 +6,15 @@ import HeartIncomplete from '../../assets/img/heart-inc.png'
 
 const Card = ({ hits }) => {
 
- const handleSubmit = (e) => {
-     e.preventDefault();
+  //Estado
+  const [heart, setHeart] = useState([]);
 
-     /* const heart = document.querySelector('.card__right--icon');
-     heart.querySelector('img').setAttribute('src', HeartComplete); */
-     
- };
+  const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const heart = document.querySelector('.card__right--icon');
+      heart.querySelector('img').setAttribute('src', HeartComplete); 
+  };
 
 /* const paintHeart = e => {
     e.preventDefault();
