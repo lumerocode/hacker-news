@@ -6,16 +6,16 @@ import Vues from '../../assets/img/vues.png'
 
 const Filter = ({ setName, tech }) => {
 
-
   const options = document.querySelector('#options');
   const containerSelect = document.querySelector('#select .container-select');
   const hiddenInput = document.querySelector('#inputSelect')  
   
-
+  //Agregar clase que muestra las opciones cada vez que selecionamos el select
   const optionsShow = () => {
 	options.classList.toggle('active')
   }
 
+  //Para que al seleccionar una opcion ocupe el lugar de la cada del select y a la vez actualice la API
   const inputShow = (e) => {
 	e.preventDefault()
 	containerSelect.innerHTML = e.currentTarget.innerHTML;
@@ -30,9 +30,6 @@ const Filter = ({ setName, tech }) => {
 	 }
 
   }
-
-  
-  
 
   return (
     <section className='container__filter'>

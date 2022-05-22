@@ -28,7 +28,7 @@ function App() {
 
   const Home = () => {
 
-  //Estados que recibe y actualiza según 
+  //Estados que recibe y actualiza según el nombre de la tecnología
   const [name, setName] = useState("");
 
   //Variables para el filtro
@@ -37,20 +37,23 @@ function App() {
   //Estado que recibe y actualiza los datos traidos de la API
   const [newData, setNewData] = useState([]);
 
+  //Estado para actualizar la página "Prev" y "Next"
+  const [pageNumber, setPageNumber] = useState(0);
+
   //Destructuración del objeto newData
   const {hits} = newData;
 
 
   //Guardamos la API
-  const API = `https://hn.algolia.com/api/v1/search_by_date?query=${name}&page=0&hitsPerPage=8`;
+  const API = `https://hn.algolia.com/api/v1/search_by_date?query=${name}&page=${pageNumber}&hitsPerPage=8`;
 
   useEffect(() => {
     (async function () { 
       const data = await fetch(API) //Hace el llamado a la API en un tiempo
-        .then((res) => res.json())  //Devolvemos la respuesta que recibimos en formato Json
-        setNewData(data) //Guardamos esa respuesta en setNewData
+        .then((res) => res.json()) //Devolvemos la respuesta que recibimos en formato Json
+        setNewData(data.hits)//Guardamos esa respuesta en setNewData
      })();
-  },[API]);
+  },[API, pageNumber]);
 
   return (
     <>
@@ -63,7 +66,9 @@ function App() {
          />
         <section className='container__card'>
           <Card 
-            hits={hits}/>
+            newData={newData}
+            pageNumber={pageNumber}
+            setPageNumber={setPageNumber}/>
         </section>
       </div>
     </>

@@ -9,3 +9,16 @@
     display: grid;
     justify-content: start;
 }
+
+
+/* ===================== MEDIA QUERIES (MEDIUM DEVICES) ===================== */
+@media screen and (max-width: 1024px) {
+    .container__header {
+        justify-content: center;
+    }
+}
+
+/* ===================== MEDIA QUERIES (SMALL DEVICES) ===================== */
+@media screen and (max-width: 600px) {
+  
+}

@@ -12,9 +12,6 @@
   --color-bg: #fcfcfc;
   --azure: #1797ff;
 
-
-  --transition : all 400 ease;
-
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-ms: 90%;
@@ -32,4 +29,21 @@ body {
 .container__card {
   margin-left: 150px;
   margin-right: 150px;
+}
+
+
+/* ===================== MEDIA QUERIES (MEDIUM DEVICES) ===================== */
+@media screen and (max-width: 1024px) {
+ 
+}
+
+/* ===================== MEDIA QUERIES (SMALL DEVICES) ===================== */
+@media screen and (max-width: 600px) {
+  .container__header,
+  .container__navbar,
+  .container__filter,
+  .container__card {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 }

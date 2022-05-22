@@ -3,11 +3,9 @@ import './card.css'
 import Time from '../../assets/img/time-icon.png'
 import HeartComplete from '../../assets/img/heart-com.png'
 import HeartIncomplete from '../../assets/img/heart-inc.png'
+import InfiniteScroll from 'react-infinite-scroll-component';
 
-const Card = ({ hits }) => {
-
-  //Estado
-  const [heart, setHeart] = useState([]);
+const Card = ({ newData, setPageNumber }) => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -26,41 +24,51 @@ const Card = ({ hits }) => {
 }
  */
 
+
+
   let showCard;
 
-  if(hits) {
+  if(newData) {
 
-    showCard = hits.map((item) => {
+    showCard = newData.map((item, index) => {
 
 
         let {author, story_title, story_url, created_at} = item;
 
         return (
-                <a  href={story_url} target='_blank' key={`${author}-${created_at}`}>
-                    <div className='card__body'>
-                        <div className='card__left'>
-                                <div className='card__left--time'>
-                                    <img src={Time}/>
-                                    <span>
-                                        {created_at} by {author === "" ? "Unknown" : author}
+            
+                <a  href={story_url} target='_blank' key={`${index}`}>
+                    <InfiniteScroll
+                    dataLength={newData.length}
+                    hasMore={true}
+                    next={() => setPageNumber((prevPage) => prevPage + 1)}
+                    >
+                        <div className='card__body'>
+                            <div className='card__left'>
+                                    <div className='card__left--time'>
+                                        <img src={Time}/>
+                                        <span>
+                                            3 hours ago by {author === "" ? "Unknown" : author}
+                                        </span>
+                                    </div>
+                                    <span className='card__left--description'>
+                                    {story_title === "" ? "Unknown" : story_title}
                                     </span>
-                                </div>
-                                <span className='card__left--description'>
-                                {story_title === "" ? "Unknown" : story_title}
-                                </span>
+                            </div>
+    
+                            <div className='card__right'>
+                                <div className='card__right--bg'></div>
+                                    <div className='card__right--icon'>
+                                            <img 
+                                                src={HeartIncomplete}
+                                                onClick={handleSubmit} 
+                                            />
+                                    </div>
+                            </div>
                         </div>
- 
-                        <div className='card__right'>
-                            <div className='card__right--bg'></div>
-                                <div className='card__right--icon'>
-                                        <img 
-                                            src={HeartIncomplete}
-                                            onClick={handleSubmit} 
-                                        />
-                                </div>
-                        </div>
-                </div>
-            </a>
+                    </InfiniteScroll>
+                </a>
+            
           )
     });
 
