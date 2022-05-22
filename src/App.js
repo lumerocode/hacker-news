@@ -40,8 +40,9 @@ function App() {
   //Destructuración del objeto newData
   const {hits} = newData;
 
+
   //Guardamos la API
-  const API = `https://hn.algolia.com/api/v1/search_by_date?query=${name}&page=0`;
+  const API = `https://hn.algolia.com/api/v1/search_by_date?query=${name}&page=0&hitsPerPage=8`;
 
   useEffect(() => {
     (async function () { 
