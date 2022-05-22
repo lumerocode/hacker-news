@@ -51,7 +51,7 @@ function App() {
     (async function () { 
       const data = await fetch(API) //Hace el llamado a la API en un tiempo
         .then((res) => res.json()) //Devolvemos la respuesta que recibimos en formato Json
-        setNewData(data.hits)//Guardamos esa respuesta en setNewData
+        setNewData(data)//Guardamos esa respuesta en setNewData
      })();
   },[API, pageNumber]);
 
@@ -66,7 +66,7 @@ function App() {
          />
         <section className='container__card'>
           <Card 
-            newData={newData}
+            hits={hits}
             pageNumber={pageNumber}
             setPageNumber={setPageNumber}/>
         </section>

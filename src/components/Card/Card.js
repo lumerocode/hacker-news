@@ -5,7 +5,7 @@ import HeartComplete from '../../assets/img/heart-com.png'
 import HeartIncomplete from '../../assets/img/heart-inc.png'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-const Card = ({ newData, setPageNumber }) => {
+const Card = ({ hits, setPageNumber }) => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -28,9 +28,9 @@ const Card = ({ newData, setPageNumber }) => {
 
   let showCard;
 
-  if(newData) {
+  if(hits) {
 
-    showCard = newData.map((item, index) => {
+    showCard = hits.map((item, index) => {
 
 
         let {author, story_title, story_url, created_at} = item;
@@ -38,11 +38,7 @@ const Card = ({ newData, setPageNumber }) => {
         return (
             
                 <a  href={story_url} target='_blank' key={`${index}`}>
-                    <InfiniteScroll
-                    dataLength={newData.length}
-                    hasMore={true}
-                    next={() => setPageNumber((prevPage) => prevPage + 1)}
-                    >
+                    
                         <div className='card__body'>
                             <div className='card__left'>
                                     <div className='card__left--time'>
@@ -66,7 +62,7 @@ const Card = ({ newData, setPageNumber }) => {
                                     </div>
                             </div>
                         </div>
-                    </InfiniteScroll>
+                    
                 </a>
             
           )
