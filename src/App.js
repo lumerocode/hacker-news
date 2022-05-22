@@ -7,6 +7,7 @@ import Card from './components/Card/Card';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' //Enrutamiento
 import Faves from './Page/Faves';
+import Pagination from './components/Pagination/Pagination';
 
 
 function App() {
@@ -38,10 +39,10 @@ function App() {
   const [newData, setNewData] = useState([]);
 
   //Estado para actualizar la página "Prev" y "Next"
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
 
   //Destructuración del objeto newData
-  const {hits} = newData;
+  const {hits, nbPages} = newData;
 
 
   //Guardamos la API
@@ -71,6 +72,10 @@ function App() {
             setPageNumber={setPageNumber}/>
         </section>
       </div>
+      <Pagination 
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        nbPages={nbPages}/>
     </>
   );
 }
