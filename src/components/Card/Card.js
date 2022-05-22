@@ -42,7 +42,7 @@ const Card = ({ hits }) => {
                                 <div className='card__left--time'>
                                     <img src={Time}/>
                                     <span>
-                                        4 hours ago by {author === "" ? "Unknown" : author}
+                                        {created_at} by {author === "" ? "Unknown" : author}
                                     </span>
                                 </div>
                                 <span className='card__left--description'>
