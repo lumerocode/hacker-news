@@ -9,7 +9,7 @@
 Api de Hackers New public API
 
 ## Link de la página desplegada
-[https://project-test-houm.netlify.app/](https://project-test-houm.netlify.app/)
+[https://hacker-news-test-reign.netlify.app/](https://hacker-news-test-reign.netlify.app/)
 
 ## Herramientas que se utilizaron para el proyecto
 - instalación de: npm install react-paginate --save
@@ -23,9 +23,4 @@ Se utilizó 5 componentes y 2 páginas:
 - Card: Para realizar los cards que contienen la informaciónn de Algolia Search's API y que se renderizan en cada sección requerida.
 - Pagination: Para implementar una paginación que nos permita ver la totalidad de los cards.
 
-Se implementaron 4 páginas:
-- [Home](https://project-test-houm.netlify.app/)
-- [Episodes](https://project-test-houm.netlify.app/episodes)
-- [Filters](https://project-test-houm.netlify.app/filters)
-- [Location](https://project-test-houm.netlify.app/location)
 
