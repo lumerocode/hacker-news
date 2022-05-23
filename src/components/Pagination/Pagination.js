@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react' //Importamos los hoooks
-import ReactPaginate from 'react-paginate';
-import './pagination.css'
+import ReactPaginate from 'react-paginate'; //Importamos ReactPaginate para la paginación
+import './pagination.css' //Estilos de css
 
 
 const Pagination = ({setPageNumber, nbPages}) => {
     /*
-    {pageNumber} ===> Traemos esta constante de App.js para saber en que estado actual se encuentra la numeración de la página
     {setPageNumber} ===> Traemos esta constante de App.js para actualizar la numeración de la página 
     {nbPages} ===> Traemos la constante de App.js para saber la cantidad total de páginas 
     */
@@ -36,7 +35,6 @@ const Pagination = ({setPageNumber, nbPages}) => {
       {/* Componente de React js para la paginación */}
       <ReactPaginate 
         className="pagination"
-         //Para anular la página seleccionada con prop principal
         nextLabel=">" //Texto en el botón siguiente
         nextLinkClassName="btn_page_next next" //Estilos para el botón siguiente
         previousLabel="<" //Texto en el botón anterior

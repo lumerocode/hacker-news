@@ -1,12 +1,13 @@
 import React from 'react'
-import Time from '../assets/img/time-icon.png'
-import HeartComplete from '../assets/img/heart-com.png'
-import './faves.css'
+import Time from '../assets/img/time-icon.png' //Importamos imagen
+import HeartComplete from '../assets/img/heart-com.png' //Importamos imagen
+import './faves.css' //Importamos estilos
 
   const Faves = () => {
 
+  //Función
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //Para cancelar el eventos
   };
 
   return (
@@ -21,12 +22,12 @@ import './faves.css'
                                     <div className='card__left--time'>
                                         <img src={Time}/>
                                         <span>
-                                            4 hours ago by Peke
+                                            4 hours ago by Lumero
                                             {/* {author === "" ? "Unknown" : author} */}
                                         </span>
                                     </div>
                                     <span className='card__left--description'>
-                                        Hiiiiiii
+                                        Hi. Good Day
                                     {/* {story_title === "" ? "Unknown" : story_title} */}
                                     </span>
                             </div>

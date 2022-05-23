@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import './card.css'
-import Time from '../../assets/img/time-icon.png'
-import HeartComplete from '../../assets/img/heart-com.png'
-import HeartIncomplete from '../../assets/img/heart-inc.png'
-import InfiniteScroll from 'react-infinite-scroll-component';
+import Time from '../../assets/img/time-icon.png' //importamos imagen
+import HeartComplete from '../../assets/img/heart-com.png' //importamos imagen
+import HeartIncomplete from '../../assets/img/heart-inc.png' //importamos imagen
 
 const Card = ({ hits, setPageNumber }) => {
 
   const handleSubmit = (e) => {
-      e.preventDefault();
+      e.preventDefault(); //Para cancelar el eventos
 
-      const heart = document.querySelector('.card__right--icon');
+      const heart = document.querySelector('.card__right--icon'); //
       heart.querySelector('img').setAttribute('src', HeartComplete); 
   };
+
 
 /* const paintHeart = e => {
     e.preventDefault();
@@ -24,19 +24,21 @@ const Card = ({ hits, setPageNumber }) => {
 }
  */
 
-
-
+  //Creamos una variable para guardar todo lo que iremos iterando
   let showCard;
 
+  //Condicional que indica que si hay alguna data en "results" se puede entrar a la condicional para luego iterarl
   if(hits) {
 
+    //Iterando y renderizando cada Card
     showCard = hits.map((item, index) => {
 
-
+        //Destructuramos hits que contiene las valores de; author, story_title, story_url, created_at
         let {author, story_title, story_url, created_at} = item;
 
         return (
-            
+
+                //Estructura de las cards
                 <a  href={story_url} target='_blank' key={`${index}`}>
                     
                         <div className='card__body'>
